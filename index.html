@@ -1,1 +1,528 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Zahra Berliana Fauziah ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        body {
+            background-color: #fff5f7;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            opacity: 0.7;
+            animation: fall 3s linear infinite;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .card-container {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+        
+        .card-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            animation: shine 4s infinite;
+            z-index: -1;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: rotate(30deg) translate(-30%, -30%);
+            }
+            100% {
+                transform: rotate(30deg) translate(30%, 30%);
+            }
+        }
+        
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        
+        .message {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .hidden-message {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        
+        .message:hover + .hidden-message,
+        .hidden-message:hover {
+            opacity: 1;
+            height: auto;
+            margin-top: 20px;
+        }
+        
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        .btn {
+            background-color: #ff6b88;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background-color: #ff4d73;
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(25, 25);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(40, 40);
+            }
+        }
+        
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .image-box {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .image-box:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .image-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,105,180,0.3), rgba(255,255,255,0.2));
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .photo-gallery {
+            margin-top: 20px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+        
+        .cursor-trail {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(255, 105, 180, 0.5);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        
+        .secret-box {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .secret-box:hover {
+            transform: scale(1.2);
+        }
+        
+        .click-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ff6b88;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            transform: translate(50%, -50%);
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card-container {
+                padding: 20px;
+            }
+            
+            .message, .hidden-message {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            .image-box {
+                width: 60px;
+                height: 60px;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container floating">
+        <h1>Untuk Besti Ku ❤️ Zahra </h1>
+        
+        <div class="message">
+            Happy Birthday!
+Semoga di umur baru ini, kamu dikelilingi hal-hal yang baik—people who truly care, peace of mind, dan kesempatan-kesempatan yang bikin kamu makin bersinar. You're not just getting older, you're becoming wiser, calmer, and stronger. Tuhan selalu punya cara manis untuk nunjukin kalau kamu gak pernah sendiri.
+        </div>
+        
+        <div class="hidden-message">
+        Terima kasih udah jadi seseorang yang genuine dan tulus. Dunia butuh lebih banyak orang kayak kamu—yang tetap hangat meski pernah kecewa, yang tetap baik meski nggak selalu diperlakukan sama. So, keep being you. The real ones see you, appreciate you, and will always root for you.
+        </div>
+        
+        <div class="image-container">
+            <div class="image-box">
+                 <img src="https://i.postimg.cc/MKQByGst/656016ed5a6144dd55b07a76a344ea93.jpg" alt="Red birthday cake" />
+            </div>
+            <div class="image-box">
+                <img src="https://i.postimg.cc/hPfkskx2/14f8027265956ecea273807aecc4af48.jpg" alt="" />
+            </div>
+            <div class="image-box">
+                <img src="https://i.postimg.cc/pXH0h3C9/25ece861d0ee0ef1f1efe6385895ca27.jpg" alt="Bintang berkilau dengan warna pink dan emas, background gradient ungu" />
+            </div>
+            <div class="image-box">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4626ba99-8e84-488f-a0e3-2e5b63974e3e.png" alt="Cupcake dengan frosting pink dan taburan rainbow sprinkles" />
+            </div>
+        </div>
+        
+        <div class="btn" id="surpriseBtn">Tekan untuk Kejutan!</div>
+        <div class="btn" id="photoBtn">📷 Lihat Foto Kita</div>
+        <div class="photo-gallery" id="photoGallery" style="display: none;"></div>
+        
+        <footer>
+            Dibuat dengan ❤️ untuk Zahra
+            dari Chika 
+        </footer>
+        
+        <div class="secret-box" id="secretBox"></div>
+    </div>
+    
+    <script>
+        // Membuat confetti
+        function createConfetti() {
+            const colors = ['#ff6b88', '#ff8eab', '#ffb3c1', '#ffd6e0'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = (Math.random() * 10 + 5) + 'px';
+                confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+        
+        // Membuat hati saat kursor bergerak
+        function createHeartTrail() {
+            let cursorTrails = [];
+            
+            document.addEventListener('mousemove', (e) => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = e.clientX + 'px';
+                heart.style.top = e.clientY + 'px';
+                heart.style.width = (Math.random() * 20 + 10) + 'px';
+                heart.style.height = heart.style.width;
+                
+                // Random heart color
+                const hue = Math.random() * 20 + 340;
+                heart.style.backgroundColor = `hsl(${hue}, 100%, 75%)`;
+                
+                document.body.appendChild(heart);
+                cursorTrails.push(heart);
+                
+                setTimeout(() => {
+                    heart.style.opacity = '0.7';
+                    heart.style.transform = 'scale(1.2)';
+                }, 10);
+                
+                setTimeout(() => {
+                    heart.style.opacity = '0';
+                    setTimeout(() => {
+                        heart.remove();
+                        cursorTrails = cursorTrails.filter(h => h !== heart);
+                    }, 200);
+                }, 800);
+            });
+        }
+        
+        // Surprise button
+        document.getElementById('surpriseBtn').addEventListener('click', function() {
+            createConfetti();
+            this.textContent = 'Wahhh! 🎉';
+            setTimeout(() => {
+                this.textContent = 'Tekan Lagi!';
+            }, 2000);
+        });
+        
+        // Photo Gallery button
+        const photoBtn = document.getElementById('photoBtn');
+        const photoGallery = document.getElementById('photoGallery');
+        
+        photoBtn.addEventListener('click', function() {
+            if (photoGallery.style.display === 'none') {
+                photoGallery.innerHTML = `
+                    <h3 style="color:white; margin-bottom:15px;">Foto-Foto Kenangan Kita</h3>
+                    <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+                        <img src="https://i.postimg.cc/157qhq89/IMG-20250501-154418.jpg" style="width:100px; height:100px; object-fit:cover; margin:5px; border-radius:10px;">
+                        <img src="https://i.postimg.cc/pTrwS44V/6a3d889d857449aab7f7b542a1bea8cf.jpg" style="width:100px; height:100px; object-fit:cover; margin:5px; border-radius:10px;">
+                        <img src="https://i.postimg.cc/TPNdhVXw/IMG-20250407-WA0040-2.jpg" style="width:100px; height:100px; object-fit:cover; margin:5px; border-radius:10px;">
+                    </div>
+                `;
+                photoGallery.style.display = 'block';
+                this.textContent = '❌ Tutup Gallery';
+            } else {
+                photoGallery.style.display = 'none';
+                photoGallery.innerHTML = '';
+                this.textContent = '📷 Lihat Foto Kita';
+            }
+        });
+        
+        // Secret box
+        const secretBox = document.getElementById('secretBox');
+        let clickCount = 0;
+        
+        secretBox.addEventListener('click', function() {
+            clickCount++;
+            
+            if (!this.querySelector('.click-count')) {
+                const countElement = document.createElement('div');
+                countElement.className = 'click-count';
+                this.appendChild(countElement);
+            }
+            
+            this.querySelector('.click-count').textContent = clickCount;
+            
+            if (clickCount === 7) {
+                alert('Kamu menemukan rahasia khusus untuk Besti! ❤️');
+                clickCount = 0;
+                this.querySelector('.click-count').textContent = '';
+            }
+            
+            // Animation
+            this.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+        });
+        
+        // Image box animation
+        document.querySelectorAll('.image-box').forEach(box => {
+            box.addEventListener('click', function() {
+                this.style.transform = 'scale(0.9) rotate(15deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 500);
+            });
+        });
+        
+        // Initialize effects
+        window.onload = function() {
+            createHeartTrail();
+            
+            // Cursor trail effect
+            const cursorTrails = [];
+            const colors = ['#ff6b88', '#ff8eab', '#ffb3c1', '#ffd6e0'];
+            
+            document.addEventListener('mousemove', function(e) {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const trail = document.createElement('div');
+                        trail.className = 'cursor-trail';
+                        trail.style.left = e.clientX + 'px';
+                        trail.style.top = e.clientY + 'px';
+                        trail.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        document.body.appendChild(trail);
+                        
+                        setTimeout(() => {
+                            trail.style.opacity = '0';
+                            trail.style.transform = `translate(${e.clientX + (Math.random() * 40 - 20)}px, ${e.clientY + (Math.random() * 40 - 20)}px) scale(0.1)`;
+                            setTimeout(() => {
+                                trail.remove();
+                            }, 1000);
+                        }, 50);
+                    }, i * 100);
+                }
+            });
+        };
+    </script>
+</body>
+  </html>
